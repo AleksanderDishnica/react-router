@@ -10,23 +10,26 @@ import { Li } from "../components/Helper.js";
 function Layout() {
   return (
     <section>
-      {/* A "layout route" is a good place to put markup you want to
-            share across all the pages on your site, like navigation. */}
-      <nav className="my-3">
-        <ul className="grid sm:grid-cols-6 xs:grid-cols-1 gap-4">
-          <h1>Bootcamp.al</h1>
-          <Li title="Home" route="/" />
-          <Li title="Portfolio" route="/portfolio" />
-          <Li title="Contact" route="/contact" />
-          <Li title="About" route="/about" />
-          <Li title="No such link" route="/nothing-here" />
-        </ul>
-      </nav>
+      <section className="sm:flex">
+        <h1 className="sm:w-1/4 text-red-600 text-3xl sm:mt-3 sm:text-left text-center">Bootcamp.al</h1>
+        {/* A "layout route" is a good place to put markup you want to
+              share across all the pages on your site, like navigation. */}
+        <nav className="my-3 sm:w-3/4 xs:w-full">
+          <ul className="grid sm:grid-cols-4 sm:gap-1">
+            <Li title="Home" route="/" />
+            <Li title="Portfolio" route="/portfolio" />
+            <Li title="Contact" route="/contact" />
+            <Li title="About" route="/about" />
+          </ul>
+        </nav>
+      </section>
 
       {/* An <Outlet> renders whatever child route is currently active,
-            so you can think about this <Outlet> as a placeholder for
-            the child routes we defined above. */}
-      <Outlet />
+              so you can think about this <Outlet> as a placeholder for
+              the child routes we defined above. */}
+      <section>
+        <Outlet />
+      </section>
     </section>
   );
 }
